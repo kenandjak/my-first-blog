@@ -1,17 +1,18 @@
 <html>
     <head>
-        <title>Yaí blog topzeiro</title>
+        <title>Blog Django Girls</title>
     </head>
     <body>
-        <h1> Bora botar pra QUEBRAR!</h1>
-        <h2>Manda ver</h2>
-        <p>Hi there!</p>
-        <p>It works!</p>
-        <br>
-        <p>Vamos quebrar os ovos para fazer um bolo:</p>
-        <ul><li>ovo</li><li>leite</li><li>farinha</li>
-        <br>
-        <strong>PUTZGRILA!</strong>
-        <em>Funciona mesmo.</em>
+        <div>
+            <h1><a href="/">Blog Django Girls</a></h1>
+        </div>
+        
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h2><a href="">{{ post.title }}</a></h2>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
